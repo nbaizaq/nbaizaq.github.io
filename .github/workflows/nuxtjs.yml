@@ -61,9 +61,9 @@ jobs:
       - name: Static HTML export with Nuxt
         run: pnpm run generate --prerender
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./output
+          path: ./output/public/
 
   # Deployment job
   deploy:
