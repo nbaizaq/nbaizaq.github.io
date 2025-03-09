@@ -3,7 +3,7 @@
     <div class="flex justify-center mb-2">
       <NuxtLink to="/" class="text-xl"> Nurbek Baizakov</NuxtLink>
     </div>
-    <div class="flex justify-center gap-2 print:hidden">
+    <div class="flex justify-center gap-2 print:hidden flex-wrap">
       <NuxtLink to="/">
         <Button
           label="Home"
@@ -20,6 +20,9 @@
       </NuxtLink>
       <!-- TODO: my personal projects -->
       <!-- <Button label="Projects" variant="link" disabled /> -->
+      <NuxtLink to="http://www.linkedin.com/in/nbaizaq" target="_blank">
+        <Button label="LinkedIn" variant="link" icon="pi pi-linkedin" />
+      </NuxtLink>
       <NuxtLink to="https://github.com/nbaizaq" target="_blank">
         <Button label="Github" variant="link" icon="pi pi-github" />
       </NuxtLink>
