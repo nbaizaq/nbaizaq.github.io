@@ -17,7 +17,7 @@
         <a
           :href="props.experience.website"
           target="_blank"
-          class="text-gray-500 hover:text-blue-500"
+          class="text-gray-500 hover:text-primary-500"
           ><i class="pi pi-external-link !text-xs" />
           {{ props.experience.website }}</a
         >

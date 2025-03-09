@@ -1,9 +1,11 @@
 <template>
   <div class="w-full md:w-3/4 md:mx-auto lg:w-1/2">
-    <div class="flex justify-end print:hidden" v-if="supportsPrint">
-      <Button variant="text" size="small" @click="onPrint">Print</Button>
-    </div>
-    <hr class="my-4 text-gray-400 border-dashed" />
+    <ClientOnly>
+      <div class="flex justify-end print:hidden" v-if="supportsPrint">
+        <Button variant="text" size="small" @click="onPrint">Print</Button>
+      </div>
+    </ClientOnly>
+    <hr class="my-4 print:my-2 text-gray-400 border-dashed" />
     <div class="flex flex-col gap-8">
       <CvAddress />
       <CvBlock title="Professional summary" class="leading-8 text-sm">
@@ -355,6 +357,7 @@ const skills = computed(() => {
 });
 
 const supportsPrint = computed(() => {
+  if (useNuxtApp().ssrContext) return false;
   return window.print !== undefined;
 });
 

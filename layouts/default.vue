@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <div class="flex justify-center mb-2">
+    <div class="flex justify-center my-4 print:my-0">
       <NuxtLink to="/" class="text-xl"> Nurbek Baizakov</NuxtLink>
     </div>
     <div class="flex justify-center gap-2 print:hidden flex-wrap">
