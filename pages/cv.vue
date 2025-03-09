@@ -6,11 +6,8 @@
     <hr class="my-4 text-gray-400 border-dashed" />
     <div class="flex flex-col gap-8">
       <CvAddress />
-      <CvBlock title="Professional summary">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
+      <CvBlock title="Professional summary" class="leading-8 text-sm">
+        {{ professionalSummary }}
       </CvBlock>
       <CvBlock title="Work Experience">
         <div class="flex flex-col gap-4">
@@ -65,6 +62,13 @@
 </template>
 
 <script lang="ts" setup>
+useHead({
+  title: "CV",
+});
+
+const professionalSummary =
+  "Experienced Front-End Team Lead and full-stack developer with a focus on delivering stable and innovative web solutions. Proven ability to lead teams, develop UI kits, and translate client requirements into successful products. Strong expertise in modern front-end technologies and a commitment to user-centric design.";
+
 const experiences: CvExperience[] = [
   {
     title: "Research Assistant Intern",
