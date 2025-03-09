@@ -2,7 +2,7 @@
   <div class="border-1 p-4 rounded-xl border-gray-200">
     <div class="flex gap-2 items-center">
       <div class="text-sm text-gray-500 italic">{{ workingPeriod }}</div>
-      <SharedEmploymentType :type="props.experience.employmentType" />
+      <SharedEmploymentTypeTag :type="props.experience.employmentType" />
     </div>
     <div class="text-xl py-1 font-medium">
       {{ props.experience.title }}

@@ -45,7 +45,7 @@
               class="text-gray-500 text-xs"
             >
               {{ reason.title }} @ {{ reason.company }}
-              <SharedEmploymentType :type="reason.employmentType" />
+              <SharedEmploymentTypeTag :type="reason.employmentType" />
             </li>
           </ul>
         </li>
