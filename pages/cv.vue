@@ -1,6 +1,6 @@
 <template>
   <div class="w-full md:w-3/4 md:mx-auto lg:w-1/2">
-    <div class="flex justify-end print:hidden">
+    <div class="flex justify-end print:hidden" v-if="supportsPrint">
       <Button variant="text" size="small" @click="onPrint">Print</Button>
     </div>
     <hr class="my-4 text-gray-400 border-dashed" />
@@ -352,6 +352,10 @@ const skills = computed(() => {
   return Object.entries(experienceSkills)
     .sort((a, b) => b[1] - a[1])
     .map(([skill, count]) => skill);
+});
+
+const supportsPrint = computed(() => {
+  return window.print !== undefined;
 });
 
 function onPrint() {
