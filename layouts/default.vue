@@ -1,9 +1,9 @@
 <template>
   <div class="p-4">
-    <div class="flex justify-center mb-2">
+    <div class="flex justify-center my-4 print:my-0">
       <NuxtLink to="/" class="text-xl"> Nurbek Baizakov</NuxtLink>
     </div>
-    <div class="flex justify-center gap-2">
+    <div class="flex justify-center gap-2 print:hidden flex-wrap">
       <NuxtLink to="/">
         <Button
           label="Home"
@@ -18,9 +18,23 @@
           :class="route.path === '/cv' ? 'underline underline-offset-2' : ''"
         />
       </NuxtLink>
-      <Button label="Projects" variant="link" disabled />
-      <Button label="Github" variant="link" disabled />
-      <Button label="About" variant="link" disabled />
+      <!-- TODO: my personal projects -->
+      <!-- <Button label="Projects" variant="link" disabled /> -->
+      <NuxtLink to="http://www.linkedin.com/in/nbaizaq" target="_blank">
+        <Button label="LinkedIn" variant="link" icon="pi pi-linkedin" />
+      </NuxtLink>
+      <NuxtLink to="https://github.com/nbaizaq" target="_blank">
+        <Button label="Github" variant="link" icon="pi pi-github" />
+      </NuxtLink>
+      <NuxtLink to="https://leetcode.com/u/nbaizakof" target="_blank">
+        <Button label="LeetCode" variant="link"
+          ><template #icon>
+            <img src="~/assets/img/leetcode.png" class="w-4 h-4" />
+          </template>
+        </Button>
+      </NuxtLink>
+      <!-- TODO: about me section -->
+      <!-- <Button label="About" variant="link" disabled /> -->
     </div>
     <div class="p-4">
       <slot />

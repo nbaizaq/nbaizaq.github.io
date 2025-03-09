@@ -43,10 +43,15 @@ export default defineNuxtConfig({
           crossorigin: "",
         },
         {
-          href: "https://fonts.googleapis.com/css2?family=RobotoMono:ital,wght@0,100..900;1,100..900&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap",
           rel: "stylesheet",
         },
       ],
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseUrl: "https://nbaizaq.github.io",
     },
   },
   vite: {
