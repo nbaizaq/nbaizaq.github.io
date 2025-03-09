@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-xl text-blue-500 font-medium">{{ props.title }}</div>
-    <div class="w-full my-4 h-0.5 bg-blue-200 rounded-lg"></div>
+    <hr class="my-4 text-gray-400"></hr>
     <div class="mt-2">
       <slot />
     </div>

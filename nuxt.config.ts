@@ -49,6 +49,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      baseUrl: "https://nbaizaq.github.io",
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

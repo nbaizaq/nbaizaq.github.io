@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --text-xxs: 0.5rem;
+}
+
 body {
   font-family: "Roboto Mono", sans-serif;
 }
