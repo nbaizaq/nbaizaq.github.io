@@ -6,9 +6,9 @@
     <div class="text-xl my-1">{{ props.education.degree }}</div>
     <div class="text-sm">
       {{ props.education.major }}
-      <span v-if="props.education.major" class="text-gray-500">(Major)</span>,
+      <span v-if="props.education.major" class="text-gray-500 text-xs">(Major)</span>,
       {{ props.education.minor }}
-      <span v-if="props.education.minor" class="text-gray-500">(Minor)</span>
+      <span v-if="props.education.minor" class="text-gray-500 text-xs">(Minor)</span>
     </div>
     <div class="text-sm mt-1 text-gray-500">
       <div>
