@@ -19,6 +19,12 @@
       >
         <i class="pi pi-globe !text-sm" /> nbaizaq.github.io
       </a>
+      <a
+        class="flex gap-1 items-center shrink-0 hover:text-primary-500"
+        href="https://t.me/nbaizaq"
+      >
+        <i class="pi pi-telegram !text-sm" /> nbaizaq
+      </a>
     </div>
     <div class="flex gap-2 justify-between items-center mt-2 text-sm flex-wrap">
       <div class="flex gap-2 items-center flex-wrap">
