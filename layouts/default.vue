@@ -18,8 +18,15 @@
           :class="route.path === '/cv' ? 'underline underline-offset-2' : ''"
         />
       </NuxtLink>
-      <!-- TODO: my personal projects -->
-      <!-- <Button label="Projects" variant="link" disabled /> -->
+      <NuxtLink to="/contact">
+        <Button
+          label="Contact"
+          variant="link"
+          :class="
+            route.path === '/contact' ? 'underline underline-offset-2' : ''
+          "
+        />
+      </NuxtLink>
       <NuxtLink to="http://www.linkedin.com/in/nbaizaq" target="_blank">
         <Button label="LinkedIn" variant="link" icon="pi pi-linkedin" />
       </NuxtLink>
@@ -33,8 +40,6 @@
           </template>
         </Button>
       </NuxtLink>
-      <!-- TODO: about me section -->
-      <!-- <Button label="About" variant="link" disabled /> -->
     </div>
     <div class="p-4">
       <slot />

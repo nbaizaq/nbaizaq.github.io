@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-3/4 md:mx-auto lg:w-1/2">
+  <div class="container">
     <ClientOnly>
       <div class="flex justify-end print:hidden" v-if="supportsPrint">
         <Button variant="text" size="small" @click="onPrint">Print</Button>
