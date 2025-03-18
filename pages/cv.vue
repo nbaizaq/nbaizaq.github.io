@@ -259,7 +259,7 @@ const projects: CvExperience[] = [
 
 const education: CvEducation = {
   start: new Date("2016-09-01"),
-  end: new Date("2019-12-01"),
+  end: new Date("2021-12-01"),
   university: "UNIST",
   location: "Ulsan, South Korea",
   degree: "Bachelor of Science",
