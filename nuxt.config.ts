@@ -29,6 +29,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   nitro: {
     static: true,
+    prerender: {
+      routes: ["/cv-data"],
+    },
   },
   app: {
     head: {

@@ -1,4 +1,7 @@
+export type ExperienceType = 'employment' | 'project';
 export interface CvExperience {
+  id?: string;
+  type: ExperienceType;
   title: string;
   start: Date;
   end?: Date;
@@ -6,7 +9,7 @@ export interface CvExperience {
   location?: string;
   responsibilities: string[];
   techStack: string[];
-  employmentType?: EmploymentType;
+  employmentType: EmploymentType; // Ensure this uses the updated EmploymentType
   website?: string;
 }
 
@@ -20,15 +23,31 @@ export interface CvEducation {
   minor?: string;
   gpa?: string;
   courses?: string[];
-  academicLeaves?: {
+  academicLeaves?: Array<{ // Changed to Array type
     start: Date;
     end: Date;
-    reasons?: {
+    reasons: Array<{ // Changed to Array type and made reasons non-optional
       title: string;
       employmentType?: EmploymentType;
       company?: string;
-    }[];
-  }[];
+      experienceId?: string; // Add optional experienceId for anchor linking
+    }>;
+  }>;
 }
 
-export type EmploymentType = "full-time" | "part-time";
+export type EmploymentType = "full-time" | "part-time" | "contract" | "internship";
+
+export interface CvAward {
+  dates: Date[];
+  award: string;
+  location: string;
+}
+
+export interface CvData {
+  professionalSummary: string;
+  experiences: CvExperience[];
+  education: CvEducation;
+  awards: CvAward[];
+  languages: string[];
+  skills: string[];
+}

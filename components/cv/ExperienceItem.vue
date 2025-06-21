@@ -1,8 +1,27 @@
 <template>
-  <div class="border-1 p-4 rounded-xl border-gray-200">
+  <div
+    :id="props.experience.id"
+    class="border-1 p-4 rounded-xl border-gray-200"
+    :class="isPresent ? 'border-primary-200 bg-primary-50' : 'border-gray-200'"
+  >
     <div class="flex gap-2 items-center">
-      <div class="text-sm text-gray-500 italic">{{ workingPeriod }}</div>
-      <SharedEmploymentTypeTag :type="props.experience.employmentType" />
+      <div
+        class="text-sm italic"
+        :class="isPresent ? 'text-primary-500' : 'text-gray-500'"
+      >
+        {{ workingPeriod }}
+      </div>
+      <SharedEmploymentTypeTag
+        :type="props.experience.employmentType"
+        :severity="
+          props.experience.type === 'employment' ? 'primary' : 'secondary'
+        "
+      />
+      <SharedEmploymentTypeTag
+        v-if="props.experience.type === 'project'"
+        type="project"
+        severity="accent"
+      />
     </div>
     <div class="text-xl py-1 font-medium">
       {{ props.experience.title }}
@@ -23,7 +42,8 @@
         >
       </div>
     </div>
-    <div v-if="props.experience.location" class="text-sm mt-1 text-gray-500">
+    <div v-if="props.experience.location" class="text-sm mt-1 text-gray-500 flex items-center gap-1">
+      <i class="pi pi-map-marker !text-xs" />
       {{ props.experience.location }}
     </div>
     <div class="mt-4">
@@ -31,7 +51,7 @@
       <ul class="mt-2 list-disc pl-4" v-if="props.experience.responsibilities">
         <li
           v-for="responsibility in props.experience.responsibilities"
-          class="text-sm py-1"
+          class="text-sm py-1 font-light"
         >
           {{ responsibility }}
         </li>
@@ -58,5 +78,8 @@ const workingPeriod = computed(() => {
   return `${formatDate(props.experience.start)} - ${formatDate(
     props.experience.end
   )}`;
+});
+const isPresent = computed(() => {
+  return workingPeriod.value.includes("Present");
 });
 </script>
