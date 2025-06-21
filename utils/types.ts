@@ -1,4 +1,7 @@
+export type ExperienceType = 'employment' | 'project';
 export interface CvExperience {
+  id?: string;
+  type: ExperienceType;
   title: string;
   start: Date;
   end?: Date;
@@ -27,6 +30,7 @@ export interface CvEducation {
       title: string;
       employmentType?: EmploymentType;
       company?: string;
+      experienceId?: string; // Add optional experienceId for anchor linking
     }>;
   }>;
 }
@@ -42,7 +46,6 @@ export interface CvAward {
 export interface CvData {
   professionalSummary: string;
   experiences: CvExperience[];
-  projects: CvExperience[];
   education: CvEducation;
   awards: CvAward[];
   languages: string[];

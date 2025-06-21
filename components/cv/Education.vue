@@ -44,8 +44,14 @@
               :key="reason.title"
               class="text-gray-500 text-xs"
             >
-              {{ reason.title }} @ {{ reason.company }}
-              <SharedEmploymentTypeTag :type="reason.employmentType" />
+              {{ reason.title }} @
+              <template v-if="reason.experienceId">
+                <a :href="'#' + reason.experienceId" class="underline hover:text-blue-600">{{ reason.company }}</a>
+              </template>
+              <template v-else>
+                {{ reason.company }}
+              </template>
+              <SharedEmploymentTypeTag class="ml-2" :type="reason.employmentType" />
             </li>
           </ul>
         </li>

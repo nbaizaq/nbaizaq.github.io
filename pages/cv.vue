@@ -2,6 +2,11 @@
   <div class="w-full md:w-3/4 md:mx-auto lg:w-1/2">
     <ClientOnly>
       <div class="flex justify-end print:hidden" v-if="supportsPrint">
+        <a href="/cv-data">
+          <Button variant="link" size="small" class="hover:underline"
+            >JSON</Button
+          >
+        </a>
         <Button variant="text" size="small" @click="onPrint">Print</Button>
       </div>
     </ClientOnly>
@@ -14,17 +19,7 @@
       <CvBlock title="Work Experience">
         <div class="flex flex-col gap-4">
           <CvExperienceItem
-            v-for="experience in experiences.reverse()"
-            :key="experience.title"
-            :experience="experience"
-            full-time
-          />
-        </div>
-      </CvBlock>
-      <CvBlock title="Projects">
-        <div class="flex flex-col gap-4">
-          <CvExperienceItem
-            v-for="experience in projects.reverse()"
+            v-for="experience in experiences"
             :key="experience.title"
             :experience="experience"
             full-time
@@ -46,7 +41,7 @@
       </CvBlock>
       <CvBlock title="Awards">
         <div class="flex flex-col gap-4">
-          <div v-for="award in awards.reverse()" :key="award.award">
+          <div v-for="award in awards.slice(0, 3)" :key="award.award">
             <div class="text-xs text-gray-500">
               {{ award.dates.map(formatDate).join(" - ") }}
             </div>
@@ -54,6 +49,22 @@
             <div class="text-sm text-gray-700">
               {{ award.location }}
             </div>
+          </div>
+          <template v-if="showMoreAwards">
+            <div v-for="award in awards.slice(3)" :key="award.award">
+              <div class="text-xs text-gray-500">
+                {{ award.dates.map(formatDate).join(" - ") }}
+              </div>
+              <div>{{ award.award }}</div>
+              <div class="text-sm text-gray-700">
+                {{ award.location }}
+              </div>
+            </div>
+          </template>
+          <div class="flex justify-center" v-if="!showMoreAwards">
+            <Button variant="text" size="small" @click="onShowMoreAwards">
+              More <i class="pi pi-chevron-down"></i>
+            </Button>
           </div>
         </div>
       </CvBlock>
@@ -65,12 +76,11 @@
 import {
   professionalSummary,
   experiences,
-  projects,
   education,
   awards,
   languages,
   skills,
-} from "~/server/data/cvData";
+} from "~/assets/data/cv-data";
 
 useHead({
   title: "CV",
@@ -84,4 +94,12 @@ const supportsPrint = computed(() => {
 function onPrint() {
   window.print();
 }
+
+// #region Awards
+const showMoreAwards = ref(false);
+
+function onShowMoreAwards() {
+  showMoreAwards.value = !showMoreAwards.value;
+}
+// #endregion
 </script>
