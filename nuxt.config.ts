@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   nitro: {
     static: true,
     prerender: {
-      routes: ["/cv-data.json"],
+      routes: ["/cv-data"],
     },
   },
   app: {
