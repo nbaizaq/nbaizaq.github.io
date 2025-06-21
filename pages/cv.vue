@@ -2,7 +2,7 @@
   <div class="container">
     <ClientOnly>
       <div class="flex justify-end print:hidden" v-if="supportsPrint">
-        <a href="/cv-data">
+        <a href="/cv-data.json">
           <Button variant="link" size="small" class="hover:underline"
             >JSON</Button
           >
