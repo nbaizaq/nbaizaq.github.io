@@ -43,6 +43,7 @@
       </div>
       <div class="flex gap-1 items-center shrink-0">
         <i class="pi pi-map-marker !text-sm" /> Bishkek, Kyrgyzstan
+        <span class="text-primary-600 font-medium ml-2 uppercase tracking-wider">• Ready to relocate!</span>
       </div>
     </div>
   </div>
